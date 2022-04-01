@@ -1,5 +1,6 @@
 {
 	"name": "RestService1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"parameters": {
 			"depIata": {
@@ -12,8 +13,13 @@
 		"typeProperties": {
 			"url": "http://aviation-edge.com/v2/public/flights",
 			"enableServerCertificateValidation": false,
-			"authenticationType": "Anonymous"
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"key": {
+					"type": "SecureString",
+					"value": "**********"
+				}
+			}
 		}
-	},
-	"type": "Microsoft.DataFactory/factories/linkedservices"
+	}
 }
