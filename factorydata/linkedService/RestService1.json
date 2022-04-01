@@ -14,7 +14,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://aviation-edge.com/v2/public/flights",
+			"url": "https://aviation-edge.com/v2/public/flights?",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
