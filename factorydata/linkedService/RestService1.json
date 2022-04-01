@@ -1,7 +1,7 @@
 {
 	"name": "RestService1",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
+		"description": "Aviation API linked service",
 		"parameters": {
 			"depIata": {
 				"type": "string",
@@ -11,16 +11,20 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://aviation-edge.com/v2/public/flights",
+			"url": "https://aviation-edge.com/v2/public/flights?",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous",
 			"authHeaders": {
 				"key": {
-					"type": "SecureString",
-					"value": "**********"
+					"type": "AzureKeyVaultSecret",
+					"store": {
+						"referenceName": "AzureKeyVault1",
+						"type": "LinkedServiceReference"
+					},
+					"secretName": "aviationapikey"
 				}
 			}
-		},
-		"description": "Aviation API linked service"
-	}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
