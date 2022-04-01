@@ -15,7 +15,7 @@
 		"type": "RestService",
 		"typeProperties": {
 			"url": "https://aviation-edge.com/v2/public/flights?",
-			"enableServerCertificateValidation": false,
+			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
 	},
