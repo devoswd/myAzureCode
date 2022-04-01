@@ -20,6 +20,7 @@
 					"value": "**********"
 				}
 			}
-		}
+		},
+		"description": "Aviation API linked service"
 	}
 }
