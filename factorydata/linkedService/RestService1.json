@@ -1,11 +1,8 @@
 {
 	"name": "RestService1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"parameters": {
-			"key": {
-				"type": "string",
-				"defaultValue": "d8921d-e48ea9"
-			},
 			"depIata": {
 				"type": "string",
 				"defaultValue": "WLG"
@@ -16,8 +13,13 @@
 		"typeProperties": {
 			"url": "https://aviation-edge.com/v2/public/flights?",
 			"enableServerCertificateValidation": true,
-			"authenticationType": "Anonymous"
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"APIKey": {
+					"type": "SecureString",
+					"value": "**********"
+				}
+			}
 		}
-	},
-	"type": "Microsoft.DataFactory/factories/linkedservices"
+	}
 }
