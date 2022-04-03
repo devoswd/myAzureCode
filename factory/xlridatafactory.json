@@ -1,0 +1,9 @@
+{
+	"name": "xlridatafactory",
+	"location": "australiaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "70604c7c-0163-4ac9-8c66-cbc79ecb9f81",
+		"tenantId": "8fee60b5-e84f-400c-a14d-40b86d32682a"
+	}
+}
