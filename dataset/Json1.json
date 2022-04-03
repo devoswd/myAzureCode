@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "departures",
 				"folderPath": "Flightdata",
 				"container": "xlr8bidlsgfilesystem"
 			}
