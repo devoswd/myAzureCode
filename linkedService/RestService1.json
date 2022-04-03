@@ -1,0 +1,28 @@
+{
+	"name": "RestService1",
+	"properties": {
+		"parameters": {
+			"depIata": {
+				"type": "string",
+				"defaultValue": "WLG"
+			}
+		},
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://aviation-edge.com/v2/public/flights?",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"APIKey": {
+					"type": "AzureKeyVaultSecret",
+					"store": {
+						"referenceName": "AzureKeyVault1",
+						"type": "LinkedServiceReference"
+					},
+					"secretName": "aviationapikey"
+				}
+			}
+		}
+	}
+}
