@@ -5,8 +5,8 @@
 			"referenceName": "RestService1",
 			"type": "LinkedServiceReference",
 			"parameters": {
-				"depIata": "WLG",
-				"key": "d8921d-e48ea9"
+				"key": "d8921d-e48ea9",
+				"depIata": "WLG"
 			}
 		},
 		"annotations": [],
