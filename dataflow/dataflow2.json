@@ -12,27 +12,51 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "CosmosDbSqlApiCollection1",
+						"type": "DatasetReference"
+					},
+					"name": "AirlineDataWLGDepartures"
+				}
+			],
 			"transformations": [
 				{
-					"name": "flatten1"
+					"name": "derivedcolumndata"
 				}
 			],
 			"scriptLines": [
 				"source(output(",
+				"          aircraft as (regNumber as string, iataCode as string, icaoCode as string, icao24 as string),",
+				"          airline as (iataCode as string, icaoCode as string),",
+				"          arrival as (iataCode as string, icaoCode as string),",
+				"          departure as (iataCode as string, icaoCode as string),",
+				"          flight as (number as short, icaoNumber as string, iataNumber as string),",
+				"          geography as (altitude as double, latitude as double, direction as double, longitude as double),",
+				"          speed as (horizontal as double, vspeed as double, isGround as boolean),",
+				"          status as string,",
+				"          system as (squawk as string, updated as integer)",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     inferDriftedColumnTypes: true,",
+				"     format: 'document',",
+				"     systemColumns: true) ~> source1",
+				"source1 derive(transformationtimestamp = currentTimestamp()) ~> derivedcolumndata",
+				"derivedcolumndata sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
 				"          firstname as string,",
 				"          age as integer",
 				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     format: 'document') ~> source1",
-				"source1 foldDown(unroll(),",
-				"     mapColumn(",
-				"          firstname,",
-				"          age",
-				"     ),",
-				"     skipDuplicateMapInputs: false,",
-				"     skipDuplicateMapOutputs: false) ~> flatten1"
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'document',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> AirlineDataWLGDepartures"
 			]
 		}
 	}
