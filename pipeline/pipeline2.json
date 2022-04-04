@@ -1,0 +1,29 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://aviation-edge.com/v2/public/flights?",
+					"method": "GET",
+					"headers": {
+						"key": "d8921d-e48ea9",
+						"depIata": "WLG"
+					}
+				}
+			}
+		],
+		"annotations": []
+	}
+}
