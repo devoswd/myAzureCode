@@ -1,8 +1,23 @@
 {
 	"name": "RestService1",
 	"properties": {
+		"parameters": {
+			"key": {
+				"type": "string",
+				"defaultValue": "d8921d-e48ea9"
+			},
+			"depIata": {
+				"type": "string",
+				"defaultValue": "WLG"
+			}
+		},
+		"annotations": [],
 		"type": "RestService",
-		"annotations": []
+		"typeProperties": {
+			"url": "https://aviation-edge.com/v2/public/flights",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
 	},
 	"date": "today()"
 }
