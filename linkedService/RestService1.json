@@ -14,7 +14,7 @@
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous",
 			"authHeaders": {
-				"Authorization": {
+				"key": {
 					"type": "AzureKeyVaultSecret",
 					"store": {
 						"referenceName": "AzureKeyVault1",
