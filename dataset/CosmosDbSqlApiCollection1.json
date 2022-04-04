@@ -19,7 +19,7 @@
 			}
 		},
 		"typeProperties": {
-			"collectionName": "Persons"
+			"collectionName": "Container1"
 		}
 	}
 }
