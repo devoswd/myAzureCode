@@ -16,7 +16,17 @@
 		"typeProperties": {
 			"url": "https://aviation-edge.com/v2/public/flights",
 			"enableServerCertificateValidation": false,
-			"authenticationType": "Anonymous"
+			"authenticationType": "Anonymous",
+			"authHeaders": {
+				"key": {
+					"type": "AzureKeyVaultSecret",
+					"store": {
+						"referenceName": "AzureKeyVault1",
+						"type": "LinkedServiceReference"
+					},
+					"secretName": "aviationapikey"
+				}
+			}
 		}
 	},
 	"date": "today()"
