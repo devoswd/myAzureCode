@@ -5,10 +5,6 @@
 			"depIata": {
 				"type": "string",
 				"defaultValue": "WLG"
-			},
-			"key": {
-				"type": "string",
-				"defaultValue": "d8921d-e48ea9"
 			}
 		},
 		"annotations": [],
